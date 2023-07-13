@@ -41,7 +41,7 @@ def read_files_split(df):
     now_time = datetime.datetime.now() + datetime.timedelta(hours=8)
 
     for tme in range(len(df[0])):
-        if str('\x00') not in df[13][tme]:
+        if str('\x00') not in df[13][tme] and str('NGGA') not in df[13][tme] and str(',') not in df[13][tme]:
             # 获取今天日期
             today = datetime.datetime.utcnow().date()
             # 构造今天早上8点的UTC时间
